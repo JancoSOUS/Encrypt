@@ -6,8 +6,10 @@ class MyTextField extends StatefulWidget {
     required this.controller,
     required this.labelText,
     this.obscureText = false,
+    this.autofocus = false,
   }) : super(key: key);
 
+  final bool autofocus;
   final String labelText;
   final bool obscureText;
   final TextEditingController controller;
@@ -26,7 +28,7 @@ class _MyTextFieldState extends State<MyTextField> {
         obscureText: widget.obscureText,
         textAlign: TextAlign.center,
         style: const TextStyle(color: Colors.white),
-        autofocus: true,
+        autofocus: widget.autofocus,
         decoration: InputDecoration(
           labelStyle: const TextStyle(
             color: Colors.white,
