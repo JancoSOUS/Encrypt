@@ -20,6 +20,7 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Encryption',
       scaffoldMessengerKey: messangerKey,
       debugShowCheckedModeBanner: false,
       home: Scaffold(
