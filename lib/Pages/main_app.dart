@@ -1,7 +1,7 @@
+import 'package:encryption/Service/encryption.dart';
+import 'package:encryption/widgets/snackbar.dart';
+import 'package:encryption/widgets/text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Service/encryption.dart';
-import 'package:flutter_application_1/widgets/snackbar.dart';
-import 'package:flutter_application_1/widgets/text_field.dart';
 
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
-name: flutter_application_1
-description: A new Flutter project.
+name: encryption
+description: Basic string encryp and decrypt
 
 publish_to: 'none'
 
