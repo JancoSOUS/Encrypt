@@ -31,6 +31,7 @@ class _MainAppState extends State<MainApp> {
               MyTextField(
                 labelText: "Enter message to encrypt here",
                 controller: controllerMessageEncrypt,
+                autofocus: true,
               ),
               MyTextField(
                 labelText: "Enter encryption password here",
