@@ -35,7 +35,6 @@ class _MainAppState extends State<MainApp> {
               ),
               MyTextField(
                 labelText: "Enter encryption password here",
-                obscureText: true,
                 controller: controllerPasswordEncrypt,
               ),
               ElevatedButton(
@@ -52,7 +51,6 @@ class _MainAppState extends State<MainApp> {
               ),
               MyTextField(
                 labelText: "Enter decryption password here",
-                obscureText: true,
                 controller: controllerPasswordDecrypt,
               ),
               ElevatedButton(
