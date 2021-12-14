@@ -3,6 +3,8 @@ import 'package:encryption/Service/encryption.dart';
 import 'package:encryption/widgets/snackbar.dart';
 import 'package:encryption/widgets/text_field.dart';
 
+String decrypted = "";
+
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);
 
@@ -15,6 +17,7 @@ class _MainAppState extends State<MainApp> {
   TextEditingController controllerPasswordEncrypt = TextEditingController();
   TextEditingController controllerMessageDecrypt = TextEditingController();
   TextEditingController controllerPasswordDecrypt = TextEditingController();
+  TextEditingController controllerPasswordDecrypted = TextEditingController();
   final messangerKey = GlobalKey<ScaffoldMessengerState>();
 
   @override
@@ -56,13 +59,19 @@ class _MainAppState extends State<MainApp> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  showSnackBar(
-                      messangerKey,
-                      Encryption().decrypt64(controllerMessageDecrypt.text,
-                          controllerPasswordDecrypt.text));
+                  decrypted = Encryption().decrypt64(
+                      controllerMessageDecrypt.text,
+                      controllerPasswordDecrypt.text);
+                  showSnackBar(messangerKey, decrypted);
+                  setState(() {
+                    controllerPasswordDecrypted.text = decrypted;
+                  });
                 },
                 child: const Text("Decrypt"),
               ),
+              MyTextField(
+                  controller: controllerPasswordDecrypted,
+                  labelText: "Decrypted message"),
             ],
           ),
         ),
